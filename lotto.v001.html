@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html ng-app="lotto">
+<head>
+	<title>Texas Lottery Helper</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- CDN provided css files -->
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- local copy of library css files - not required if using CDN -->
+	<!-- <link href="/static/libs/bootstrap/dist/css/bootstrap.min.css"	rel="stylesheet"> -->
+	
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	    <![endif]-->
+	
+	<!-- project CSS files -->
+	<link href="/static/css/main.css" rel="stylesheet">
+	
+</head>
+<body data-ng-controller="mainCtrl" data-ng-class="{loadError:loadError,loading:loading}">
+ 
+
+	<div class="navbar navbar-default sticky-top" role="navigation" >
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#{{routeName}}">Texas Lottery Helper</a>
+			</div>
+	
+			<!-- Collect the nav links, forms, and other content for toggling-->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li data-ng-class="{active:routeName=='smart'}"><a href="#smart">Smart Pick</a></li>
+					<li data-ng-class="{active:routeName=='jackpots'}"><a href="#jackpots">Jackpots</a></li>
+					<li data-ng-class="{active:routeName=='winningnumbers'}"><a href="#winningnumbers">Winning Numbers</a></li>
+					<li data-ng-click="loadFeed();"><a href="#{{routeName}}"><span class="glyphicon glyphicon-refresh"></span></a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+	</div>
+	<div class="padTop"></div>
+	
+	<div ng-view>
+		Loading...
+	</div>
+	
+	<div class="container details refresh">
+		<div class="col-md-12">
+			<em class="lastUpdate"> Last update {{fetchDate | date:'EEEE'}}
+				@ {{fetchDate | date:'mediumTime'}}</em>
+			<button type="submit" class="btn btn-success"
+				data-ng-click="loadFeed();">Refresh</button>
+		</div>
+	</div>
+	<!-- /container -->
+	
+	<div class="container details">
+		<div class="col-md-12">
+			<p>Using this site to make any kind of decision is a dubious
+				proposition before you even consider that it could be totally
+				busted.
+			</p>
+			<p>
+				Copyright &copy; 2014 <a href="http://www.danmoore.org"
+				>Dan Moore</a>. 
+				All Rights Reserved.
+			</p>
+		</div>
+	</div>
+	<!-- /container -->
+
+
+	<!-- Download JavaScript -->
+	
+	<!-- CDN provided JS libs -->
+	
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-route.min.js"></script>
+	
+	<!-- local links to JS libs -- not required if using CDN -->
+	<!--  
+		<script src="/static/libs/jquery/jquery-1.10.2.js"></script>
+		<script src="/static/libs/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="/static/libs/angular/angular-1.2.9/angular.min.js"></script>
+		<script src="/static/libs/angular/angular-1.2.9/angular-route.min.js"></script>
+ 	-->
+	<!-- project JS files -->
+	<script src="/static/js/main.js"></script>
+	
+</body>
+</html>

@@ -1,0 +1,42 @@
+<div class="smart">
+	<div class="container">
+		<div class="row">
+			<div data-ng-repeat="gd in gameDataSorted" class="col-md-4">
+				<div class="game" data-ng-class='{isFirst:$first, isLast:$last}''>
+					<h2>
+						<span data-ng-show="$first" class="glyphicon glyphicon-star-empty"></span>
+						{{gd.game.title}}
+						<span data-ng-show="$first" class="glyphicon glyphicon-star-empty"></span>
+					</h2>
+					<div class="gameDetail">
+						<p>
+							<strong>Return {{gd.calc.rtnAnnuitized*100 | number:1}}%</strong>
+						</p>
+						<p>{{gd.calc.annuitizedStr}}</p>
+						<p>{{gd.calc.cashStr}}</p>
+						<p>Odds: 1 in {{gd.game.odds.jackpot | number}}</p>
+					</div>
+					<div class="smartPick" data-ng-show="$first">
+						<h3>Smart Pick!</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /container -->
+
+	<div class="container details">
+		<div class="col-md-12">
+			<p>
+				The higher the return, the better the deal. It is
+				used here to rank the games against each other. If you are
+				wondering about what happens when it is over 100%? Well, that is
+				when some rich bastard buys every possible ticket and takes the
+				whole jackpot for themselves. I am pretty sure I read that this is
+				how the rich get richer...</p>
+
+			</p>
+		</div>
+	</div>
+	<!-- /container -->
+</div>
