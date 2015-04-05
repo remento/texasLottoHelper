@@ -1,0 +1,32 @@
+{
+  "name": "texasLottoHelper",
+  "version": "1.0.1",
+  "description": "Texas Lotto Helper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/remento/homepage.git"
+  },
+  "author": "Daniel Moore",
+  "license": "Not specified",
+  "bugs": {
+    "url": "https://github.com/remento/texasLottoHelper/issues"
+  },
+  "homepage": "https://github.com/remento/texasLottoHelper",
+  "dependencies": {
+    "bootstrap": "^3.3.4",
+    "express": "^4.12.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat-sourcemap": "^1.3.1",
+    "gulp-jslint": "^0.2.2",
+    "gulp-less-sourcemap": "^1.4.2",
+    "gulp-watch": "^4.2.3",
+    "run-sequence": "^1.0.2"
+  }
+}

@@ -1,0 +1,68 @@
+
+.sticky-top {
+  width:100%;
+  position: fixed;
+  top:0px;
+  z-index: 1;
+}
+
+.padTop{
+	height:65px;
+}
+
+.container.details{
+	margin-top:30px;
+}
+
+.loading .glyphicon-refresh{
+	color: orange;
+}
+
+.loadError .glyphicon-refresh{
+	color: red;
+}
+
+.loading .btn-success{
+	background-color: orange;
+}
+
+.loadError .btn-success{
+	background-color: red;
+	
+}
+
+
+.game{
+	border-radius:9px;
+	border:solid 2px orange;
+	margin-bottom:9px;
+	text-align:center;
+}
+.isFirst{
+	border-color:green;
+}
+.isLast{
+	border-color:red;
+}
+.refresh .lastUpdate{
+	color:black;
+	
+}
+
+.isFirst .glyphicon-star,
+.isFirst .glyphicon-star-empty{
+	color:green;
+}
+
+.gameDetail{
+	padding: 0 3px 3px 3px;
+	text-align:center;
+}
+.smartPick{
+	color:green;
+	border-top: solid 2px green;
+	text-align:center;
+}
+.smartPick h3{
+	margin:6px;
+}

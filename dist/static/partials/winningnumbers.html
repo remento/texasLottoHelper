@@ -1,0 +1,21 @@
+<div class="winning">
+
+	<div class="container">
+		<div data-ng-repeat="item in winning" class="row">
+			<div class="col-md-12">
+				<h3>
+					{{item.title}}
+				</h3>
+				<p>
+					{{item.content}}
+				</p>
+				<p>
+					<em>Published date: {{item.publishedDate}}<em>
+					<a href="{{item.link}}" target="_blank"><span class="glyphicon glyphicon-link"></span></a>
+				</p>
+				<hr>
+			</div>
+		</div>
+	</div>
+	
+</div>
