@@ -167,7 +167,12 @@
             $scope.loading = true;
             $scope.loadError = false;
             Feed.parseFeed($scope.feedSrc).then(function (res) {
-                $scope.rawData = res.data.responseData.feed.entries;
+                //$scope.rawData = res.data.responseData.feed.entries; // googleApis
+
+                //$scope.rawData = res.data.feed;  // api.rss2json.com // not used
+                $scope.rawData = res.data.items;   // api.rss2json.com
+
+
                 $scope.fetchDate = new Date();
                 clearLoading();
             }, function () {
@@ -204,9 +209,12 @@
     //--- -- --- -- --- -- ---
 
     App.factory('FeedService', ['$http', function ($http) {
+        var feedProcessUrl = 'https://api.rss2json.com/v1/api.json?callback=JSON_CALLBACK&rss_url=';
+        // google API discontinued...
+        // ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=JSON_CALLBACK&q=
         return {
             parseFeed: function (url) {
-                return $http.jsonp('//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=JSON_CALLBACK&q=' + encodeURIComponent(url));
+                return $http.jsonp(feedProcessUrl + encodeURIComponent(url));
             }
         };
     }]);

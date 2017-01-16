@@ -28,7 +28,7 @@
 //    });
 
     gulp.task('copy', function () {
-        gulp.src(['./*.html'])
+        gulp.src(['./lotto*.html'])
             .pipe(gulp.dest(dist));
         gulp.src(['./css/**.*'])
             .pipe(gulp.dest(distCss));

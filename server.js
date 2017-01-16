@@ -1,3 +1,5 @@
+// Dev web server - only static hosting file hosting is used
+
 /*jslint node:true */
 (function () {
     'use strict';
@@ -5,7 +7,9 @@
         express = require('express'),
         app = express();
 
-    app.use(express['static']('dist'));
+    // serve static files
+    app.use('/index.html', express.static('./index.html'));
+    app.use('/dist', express.static('dist'));
 
     server = app.listen(3000, function () {
         var host = server.address().address,
